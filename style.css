@@ -1,0 +1,159 @@
+/* global reset */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+h2 {
+    margin: 0;
+}
+
+/* выровнять текст везде */
+header,
+aside,
+footer,
+main > p,
+main > h2
+{
+  padding:10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    /* єто правило при закрепит футер внизу */
+    min-height: 100vh;
+}
+
+header {
+    background: #D3B714;
+    padding: 10px;
+    display:flex;
+
+    /* выровнять элементы горизонтально и веркально */
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo{
+  height:50px;
+  width:auto;
+  margin:0 10px;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+}
+.menu>li {
+    padding: 0 5px; 
+    font-weight: 600;
+}
+#content-wrapper{
+  display:flex;
+  flex-grow: 1;
+
+}
+#content-wrapper main{
+  display:flex;
+  flex-direction:column;
+  order: 2;
+
+  /* так карточки встанут ровно (с одинаковіми зазорами) */
+  padding: 0px 5px;
+
+}
+
+.list {
+  margin: 0px 5px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  /* это сбросит стили для ul по умолчанию, чтоб не мешали */
+  margin:0;
+}
+
+.list>li {
+  width: calc(100% / 3);
+  padding: 10px 5px;
+  display: flex;
+}
+
+.card {
+  width: 100%;
+  height: 390px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid #8E8E8E;
+  background-size: cover;
+  flex-direction: column;
+  padding: 20px;
+  transition: 0.2s;
+}
+
+/* добавляем ховер */
+.card:hover{
+  box-shadow: 2px 2px 5px  #888888;
+  transform:translate(-1px,-1px)
+}
+
+.card__content {
+  flex-grow: 1;
+  font-weight: 600;
+}
+.feature{
+  height:75px;
+  width:75px;
+
+  /* чтоб круги не расплющивало при уменьшении ширины экрана */
+  min-height:75px;
+
+  border-radius: 50%;
+  border:5px solid #C7B7B7;
+  background: center/cover no-repeat;
+}
+.btn {
+  background: #685174;
+  text-decoration: none;
+  color:white;
+
+  /* выравниваем текст в кнопке */
+  display: flex;
+  align-items: center;
+  padding: 0px 25px; 
+
+  /* пришлость задать размер, чтоб скругленные углы не посыпались */
+  height:30px;
+  border-radius: 30px;
+}
+
+#content-wrapper aside{
+  display:flex;
+  flex-direction: column;
+  min-width: 210px;
+}
+/* левая колонка */
+#content-wrapper aside:nth-of-type(1){
+  background-color: #C798B9;
+  order: 1;
+}
+/* правая колонка */
+#content-wrapper aside:nth-of-type(2){
+  background-color: #9CB1C7;
+  order: 3;
+}
+footer {
+    background: #86EC86;
+}
